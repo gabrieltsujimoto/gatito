@@ -1,13 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import Servicos from './src/screens/Servicos';
+import 'intl';
+import 'intl/locale-data/jsonp/pt-BR'
+import Cart from './src/screens/Cart';
+import { NavigationContainer } from '@react-navigation/native';
+import ServiceRoute from './src/routes/ServiceRoute';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  // return <Servicos />
+  return <NavigationContainer>
+    {/* <Cart /> */}
+    <ServiceRoute />
+  </NavigationContainer>
 }
 
 const styles = StyleSheet.create({
