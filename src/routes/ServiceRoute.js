@@ -1,5 +1,5 @@
 import React from "react";
-import { BottomTabBar, createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Servicos from "../screens/Servicos";
 import Cart from "../screens/Cart";
 

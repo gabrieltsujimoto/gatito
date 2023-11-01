@@ -30,6 +30,7 @@ const servicos = [
 
 export default function Cart() {
     const total = servicos.reduce((sum, { preco, quantidade }) => {
+
         return sum + (preco * quantidade)
     }, 0)
     return <>
@@ -37,7 +38,7 @@ export default function Cart() {
             <StatusCart total={total} />
             <FlatList
                 data={servicos}
-                renderItem={({ item }) => <Item {...item} />}
+                renderItem={({ item }) => <Item {...item} btnTexto={"Remover do carrinho"} />}
                 keyExtractor={({ id }) => String(id)} />
         </DefaultScreen>
     </>

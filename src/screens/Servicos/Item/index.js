@@ -4,7 +4,7 @@ import styles from './styles/itemStyle.js'
 import CampoInteiro from "../../../components/CampoInteiro/index.js";
 import Botao from "../../../components/Botao/index.js";
 
-export default function Item({ nome, preco, descricao, quantidade: initialQtd = 1 }) {
+export default function Item({ btnTexto, nome, preco, descricao, quantidade: initialQtd = 1 }) {
     const [qtd, setQtd] = useState(initialQtd);
 
     return <>
@@ -26,7 +26,7 @@ export default function Item({ nome, preco, descricao, quantidade: initialQtd = 
                     <Text style={styles.preco}>{Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(initialQtd * preco)}</Text>
                 </View>
             </View>
-            <Botao estilos={{ borderRadius: 12 }} valor="Remover ao carrinho" acao={() => console.log('Pressionado')} />
+            <Botao estilos={{ borderRadius: 12 }} valor={btnTexto} acao={() => console.log('Pressionado')} />
         </View>
         <View style={styles.divisor}>
         </View>

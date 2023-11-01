@@ -9,7 +9,6 @@ import ServiceRoute from './src/routes/ServiceRoute';
 export default function App() {
   // return <Servicos />
   return <NavigationContainer>
-    {/* <Cart /> */}
     <ServiceRoute />
   </NavigationContainer>
 }

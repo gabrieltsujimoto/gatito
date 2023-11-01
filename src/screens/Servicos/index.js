@@ -1,7 +1,9 @@
 import React from "react";
-import { FlatList, KeyboardAvoidingView, Platform, SafeAreaView, ScrollView, StatusBar, Text } from "react-native";
+import { FlatList, KeyboardAvoidingView, Platform, StatusBar } from "react-native";
 import Item from "./Item";
 import defaultStyles from '../../styles/globalStyle'
+import { cores } from '../../styles/globalStyle';
+import Header from "../../components/Header";
 
 const servicos = [
     {
@@ -27,10 +29,20 @@ const servicos = [
 export default function Servicos() {
     return <>
         <StatusBar />
+        <Header
+            estilos={{
+                backgroundColor: cores.roxo,
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textColor: "#fff",
+                maxHeight: "14.5%",
+                padding: 24
+            }} />
         <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "padding" : "height"} style={defaultStyles.preencher}>
             <FlatList
                 data={servicos}
-                renderItem={({ item }) => <Item {...item} />}
+                renderItem={({ item }) => <Item {...item} btnTexto={"Adicionar ao Carrinho"} />}
                 keyExtractor={({ id }) => String(id)} />
         </KeyboardAvoidingView>
     </>
