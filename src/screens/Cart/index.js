@@ -34,12 +34,12 @@ export default function Cart() {
         return sum + (preco * quantidade)
     }, 0)
     return <>
-        <DefaultScreen>
-            <StatusCart total={total} />
-            <FlatList
-                data={servicos}
-                renderItem={({ item }) => <Item {...item} btnTexto={"Remover do carrinho"} />}
-                keyExtractor={({ id }) => String(id)} />
-        </DefaultScreen>
+
+        <StatusCart total={total} />
+        <FlatList
+            data={servicos}
+            renderItem={({ item }) => <Item {...item} btnTexto={"Remover do carrinho"} />}
+            keyExtractor={({ id }) => String(id)} />
+
     </>
 }
